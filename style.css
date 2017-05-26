@@ -1,0 +1,23 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+ 	font-family: 'Avenir', 'Arial', sans-serif;
+}
+
+body {
+	min-width: 300px;
+	min-height: 350px;
+    background-color: #E8E8E8;
+ }
+
+ #fb {
+ 	color: #324d8f;
+ }
+
+ #tw {
+ 	color: #0295f4;
+ }
