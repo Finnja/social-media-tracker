@@ -16,17 +16,16 @@ continuously D: */
 
 
 function checkAndCount() {
-	chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
-		var activeTab = arrayOfTabs[0];
+	chrome.tabs.getSelected(null, function(activeTab) {
 		var activeTabUrl = activeTab.url;
-		 
+
 		if (activeTab.status === 'complete' && activeTabUrl.indexOf('https://www.facebook.com') != -1) {
 			alert('start facebook counting');
 			var fb_today = idString('fb');
 			var seconds = 0;
-			
+
 			chrome.storage.local.get(fb_today, function(item) {
-				if (item[idString('fb')]) {seconds = item[idString('fb')];} 
+				if (item[idString('fb')]) {seconds = item[idString('fb')];}
 			});
 
 			fbInterval = setInterval(function() {
@@ -47,9 +46,9 @@ function checkAndCount() {
 			alert('start twitter counting');
 			var tw_today = idString('tw');
 			var seconds = 0;
-			
+
 			chrome.storage.local.get(tw_today, function(item) {
-				if (item[idString('tw')]) {seconds = item[idString('tw')];} 
+				if (item[idString('tw')]) {seconds = item[idString('tw')];}
 			});
 
 			twInterval = setInterval(function() {
